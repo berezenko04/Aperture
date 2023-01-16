@@ -22,16 +22,35 @@
                         'Poppins': ['Poppins', 'sans-serif'],
                     },
                     backgroundImage: {
-                        'header-bg': "url('./img/bg-header.png')",
-                        'what-we-do-item1': "url('./img/what_we_do_item1.png')",
-                        'what-we-do-item2': "url('./img/what_we_do_item2.png')",
-                        'what-we-do-item3': "url('./img/what_we_do_item3.png')",
-                        'what-we-do-item4': "url('./img/what_we_do_item4.png')",
-                        'mountains': "url('./img/mountains.png')",
-                        'mac_and_objectives': "url('./img/mac_and_objectives.png')",
-                        'leaf': "url('./img/leaf.png')",
-                        'skyfall': "url('./img/skyfall.png')",
+                        'header-bg': "url('./img/bg-header.webp')",
+                        'what-we-do-item1': "url('./img/what_we_do_item1.webp')",
+                        'what-we-do-item2': "url('./img/what_we_do_item2.webp')",
+                        'what-we-do-item3': "url('./img/what_we_do_item3.webp')",
+                        'what-we-do-item4': "url('./img/what_we_do_item4.webp')",
+                        'mountains': "url('./img/mountains.webp')",
+                        'mac_and_objectives': "url('./img/mac_and_objectives.webp')",
+                        'leaf': "url('./img/leaf.webp')",
+                        'skyfall': "url('./img/skyfall.webp')",
                     },
+                    screens: {
+                        'xs': '0px',
+                        // => @media (min-width: 360px) { ... }
+
+                        'sm': '640px',
+                        // => @media (min-width: 640px) { ... }
+
+                        'md': '768px',
+                        // => @media (min-width: 768px) { ... }
+
+                        'lg': '1024px',
+                        // => @media (min-width: 1024px) { ... }
+
+                        'xl': '1280px',
+                        // => @media (min-width: 1280px) { ... }
+
+                        '2xl': '1536px',
+                        // => @media (min-width: 1536px) { ... }
+                    }
                 }
             }
         }
@@ -40,7 +59,7 @@
 
 <body class="bg-black font-Poppins">
     <header>
-        <div class="contain">
+        <div class="contain flex flex-col gap-8">
             <nav class="py-[30px] flex flex-row justify-between items-center">
                 <a href="#">
                     <svg width="128" height="31" viewBox="0 0 128 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,20 +68,65 @@
                             fill="white" />
                     </svg>
                 </a>
-                <ul class="flex flex-row gap-[50px] items-center text-[15px]">
-                    <li><a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Business areas</a></li>
-                    <li><a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Featured images</a>
+                <ul class="xs:hidden lg:flex flex-row gap-[50px] items-center text-[15px]">
+                    <li>
+                        <a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Business areas</a>
                     </li>
-                    <li><a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Gear cage</a></li>
-                    <li><a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Contact</a></li>
-                    <li><a href="#"
-                            class="text-black py-[10px] px-5 rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover">Get
-                            template</a></li>
+                    <li>
+                        <a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Featured images</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Gear cage</a>
+                    </li>
+                    <li>
+                        <a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="text-black py-[10px] px-5 rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover">
+                            Get template
+                        </a>
+                    </li>
                 </ul>
+                <div class="menu xs:block xs:cursor-pointer lg:hidden">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.14537 3.27077C7.84076 3.24999 7.46972 3.24999 7.02527 3.25H6.97475C6.53029 3.24999 6.15925 3.24999 5.85464 3.27077C5.53754 3.29241 5.23801 3.33905 4.94762 3.45933C4.27379 3.73844 3.73844 4.27379 3.45933 4.94762C3.33905 5.23801 3.29241 5.53754 3.27077 5.85464C3.24999 6.15925 3.24999 6.53028 3.25 6.97474V7.02525C3.24999 7.46971 3.24999 7.84076 3.27077 8.14537C3.29241 8.46247 3.33905 8.76199 3.45933 9.05238C3.73844 9.72621 4.27379 10.2616 4.94762 10.5407C5.23801 10.661 5.53754 10.7076 5.85464 10.7292C6.15925 10.75 6.53028 10.75 6.97474 10.75H7.02526C7.46972 10.75 7.84075 10.75 8.14537 10.7292C8.46247 10.7076 8.76199 10.661 9.05238 10.5407C9.72621 10.2616 10.2616 9.72621 10.5407 9.05238C10.661 8.76199 10.7076 8.46247 10.7292 8.14537C10.75 7.84075 10.75 7.46972 10.75 7.02526V6.97474C10.75 6.53028 10.75 6.15925 10.7292 5.85464C10.7076 5.53754 10.661 5.23801 10.5407 4.94762C10.2616 4.27379 9.72621 3.73844 9.05238 3.45933C8.76199 3.33905 8.46247 3.29241 8.14537 3.27077ZM5.52165 4.84515C5.5988 4.81319 5.71602 4.78372 5.95674 4.76729C6.20421 4.75041 6.5238 4.75 7 4.75C7.4762 4.75 7.7958 4.75041 8.04326 4.76729C8.28399 4.78372 8.4012 4.81319 8.47836 4.84515C8.78464 4.97202 9.02798 5.21536 9.15485 5.52165C9.18681 5.5988 9.21629 5.71602 9.23271 5.95674C9.24959 6.20421 9.25 6.5238 9.25 7C9.25 7.4762 9.24959 7.7958 9.23271 8.04326C9.21629 8.28399 9.18681 8.4012 9.15485 8.47836C9.02798 8.78464 8.78464 9.02798 8.47836 9.15485C8.4012 9.18681 8.28399 9.21629 8.04326 9.23271C7.7958 9.24959 7.4762 9.25 7 9.25C6.5238 9.25 6.20421 9.24959 5.95674 9.23271C5.71602 9.21629 5.5988 9.18681 5.52165 9.15485C5.21536 9.02798 4.97202 8.78464 4.84515 8.47836C4.81319 8.4012 4.78372 8.28399 4.76729 8.04326C4.75041 7.7958 4.75 7.4762 4.75 7C4.75 6.5238 4.75041 6.20421 4.76729 5.95674C4.78372 5.71602 4.81319 5.5988 4.84515 5.52165C4.97202 5.21536 5.21536 4.97202 5.52165 4.84515Z"
+                            fill="#FAFAFA" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M18.1454 3.27077C17.8408 3.24999 17.4697 3.24999 17.0253 3.25H16.9748C16.5303 3.24999 16.1592 3.24999 15.8546 3.27077C15.5375 3.29241 15.238 3.33905 14.9476 3.45933C14.2738 3.73844 13.7384 4.27379 13.4593 4.94762C13.339 5.23801 13.2924 5.53754 13.2708 5.85464C13.25 6.15925 13.25 6.53028 13.25 6.97474V7.02526C13.25 7.46972 13.25 7.84075 13.2708 8.14537C13.2924 8.46247 13.339 8.76199 13.4593 9.05238C13.7384 9.72621 14.2738 10.2616 14.9476 10.5407C15.238 10.661 15.5375 10.7076 15.8546 10.7292C16.1592 10.75 16.5303 10.75 16.9747 10.75H17.0253C17.4697 10.75 17.8408 10.75 18.1454 10.7292C18.4625 10.7076 18.762 10.661 19.0524 10.5407C19.7262 10.2616 20.2616 9.72621 20.5407 9.05238C20.661 8.76199 20.7076 8.46247 20.7292 8.14537C20.75 7.84075 20.75 7.46972 20.75 7.02526V6.97474C20.75 6.53028 20.75 6.15925 20.7292 5.85464C20.7076 5.53754 20.661 5.23801 20.5407 4.94762C20.2616 4.27379 19.7262 3.73844 19.0524 3.45933C18.762 3.33905 18.4625 3.29241 18.1454 3.27077ZM15.5216 4.84515C15.5988 4.81319 15.716 4.78372 15.9567 4.76729C16.2042 4.75041 16.5238 4.75 17 4.75C17.4762 4.75 17.7958 4.75041 18.0433 4.76729C18.284 4.78372 18.4012 4.81319 18.4784 4.84515C18.7846 4.97202 19.028 5.21536 19.1549 5.52165C19.1868 5.5988 19.2163 5.71602 19.2327 5.95674C19.2496 6.20421 19.25 6.5238 19.25 7C19.25 7.4762 19.2496 7.7958 19.2327 8.04326C19.2163 8.28399 19.1868 8.4012 19.1549 8.47836C19.028 8.78464 18.7846 9.02798 18.4784 9.15485C18.4012 9.18681 18.284 9.21629 18.0433 9.23271C17.7958 9.24959 17.4762 9.25 17 9.25C16.5238 9.25 16.2042 9.24959 15.9567 9.23271C15.716 9.21629 15.5988 9.18681 15.5216 9.15485C15.2154 9.02798 14.972 8.78464 14.8452 8.47836C14.8132 8.4012 14.7837 8.28399 14.7673 8.04326C14.7504 7.7958 14.75 7.4762 14.75 7C14.75 6.5238 14.7504 6.20421 14.7673 5.95674C14.7837 5.71602 14.8132 5.5988 14.8452 5.52165C14.972 5.21536 15.2154 4.97202 15.5216 4.84515Z"
+                            fill="#FAFAFA" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8.14537 13.2708C7.84075 13.25 7.46972 13.25 7.02526 13.25H6.97474C6.53028 13.25 6.15925 13.25 5.85464 13.2708C5.53754 13.2924 5.23801 13.339 4.94762 13.4593C4.27379 13.7384 3.73844 14.2738 3.45933 14.9476C3.33905 15.238 3.29241 15.5375 3.27077 15.8546C3.24999 16.1592 3.24999 16.5303 3.25 16.9747V17.0253C3.24999 17.4697 3.24999 17.8408 3.27077 18.1454C3.29241 18.4625 3.33905 18.762 3.45933 19.0524C3.73844 19.7262 4.27379 20.2616 4.94762 20.5407C5.23801 20.661 5.53754 20.7076 5.85464 20.7292C6.15925 20.75 6.53028 20.75 6.97474 20.75H7.02526C7.46972 20.75 7.84075 20.75 8.14537 20.7292C8.46247 20.7076 8.76199 20.661 9.05238 20.5407C9.72621 20.2616 10.2616 19.7262 10.5407 19.0524C10.661 18.762 10.7076 18.4625 10.7292 18.1454C10.75 17.8408 10.75 17.4697 10.75 17.0253V16.9747C10.75 16.5303 10.75 16.1592 10.7292 15.8546C10.7076 15.5375 10.661 15.238 10.5407 14.9476C10.2616 14.2738 9.72621 13.7384 9.05238 13.4593C8.76199 13.339 8.46247 13.2924 8.14537 13.2708ZM5.52165 14.8452C5.5988 14.8132 5.71602 14.7837 5.95674 14.7673C6.20421 14.7504 6.5238 14.75 7 14.75C7.4762 14.75 7.7958 14.7504 8.04326 14.7673C8.28399 14.7837 8.4012 14.8132 8.47836 14.8452C8.78464 14.972 9.02798 15.2154 9.15485 15.5216C9.18681 15.5988 9.21629 15.716 9.23271 15.9567C9.24959 16.2042 9.25 16.5238 9.25 17C9.25 17.4762 9.24959 17.7958 9.23271 18.0433C9.21629 18.284 9.18681 18.4012 9.15485 18.4784C9.02798 18.7846 8.78464 19.028 8.47836 19.1549C8.4012 19.1868 8.28399 19.2163 8.04326 19.2327C7.7958 19.2496 7.4762 19.25 7 19.25C6.5238 19.25 6.20421 19.2496 5.95674 19.2327C5.71602 19.2163 5.5988 19.1868 5.52165 19.1549C5.21536 19.028 4.97202 18.7846 4.84515 18.4784C4.81319 18.4012 4.78372 18.284 4.76729 18.0433C4.75041 17.7958 4.75 17.4762 4.75 17C4.75 16.5238 4.75041 16.2042 4.76729 15.9567C4.78372 15.716 4.81319 15.5988 4.84515 15.5216C4.97202 15.2154 5.21536 14.972 5.52165 14.8452Z"
+                            fill="#FAFAFA" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M18.1454 13.2708C17.8408 13.25 17.4697 13.25 17.0253 13.25H16.9747C16.5303 13.25 16.1592 13.25 15.8546 13.2708C15.5375 13.2924 15.238 13.339 14.9476 13.4593C14.2738 13.7384 13.7384 14.2738 13.4593 14.9476C13.339 15.238 13.2924 15.5375 13.2708 15.8546C13.25 16.1592 13.25 16.5303 13.25 16.9747V17.0253C13.25 17.4697 13.25 17.8408 13.2708 18.1454C13.2924 18.4625 13.339 18.762 13.4593 19.0524C13.7384 19.7262 14.2738 20.2616 14.9476 20.5407C15.238 20.661 15.5375 20.7076 15.8546 20.7292C16.1592 20.75 16.5303 20.75 16.9747 20.75H17.0253C17.4697 20.75 17.8408 20.75 18.1454 20.7292C18.4625 20.7076 18.762 20.661 19.0524 20.5407C19.7262 20.2616 20.2616 19.7262 20.5407 19.0524C20.661 18.762 20.7076 18.4625 20.7292 18.1454C20.75 17.8408 20.75 17.4697 20.75 17.0253V16.9747C20.75 16.5303 20.75 16.1592 20.7292 15.8546C20.7076 15.5375 20.661 15.238 20.5407 14.9476C20.2616 14.2738 19.7262 13.7384 19.0524 13.4593C18.762 13.339 18.4625 13.2924 18.1454 13.2708ZM15.5216 14.8452C15.5988 14.8132 15.716 14.7837 15.9567 14.7673C16.2042 14.7504 16.5238 14.75 17 14.75C17.4762 14.75 17.7958 14.7504 18.0433 14.7673C18.284 14.7837 18.4012 14.8132 18.4784 14.8452C18.7846 14.972 19.028 15.2154 19.1549 15.5216C19.1868 15.5988 19.2163 15.716 19.2327 15.9567C19.2496 16.2042 19.25 16.5238 19.25 17C19.25 17.4762 19.2496 17.7958 19.2327 18.0433C19.2163 18.284 19.1868 18.4012 19.1549 18.4784C19.028 18.7846 18.7846 19.028 18.4784 19.1549C18.4012 19.1868 18.284 19.2163 18.0433 19.2327C17.7958 19.2496 17.4762 19.25 17 19.25C16.5238 19.25 16.2042 19.2496 15.9567 19.2327C15.716 19.2163 15.5988 19.1868 15.5216 19.1549C15.2154 19.028 14.972 18.7846 14.8452 18.4784C14.8132 18.4012 14.7837 18.284 14.7673 18.0433C14.7504 17.7958 14.75 17.4762 14.75 17C14.75 16.5238 14.7504 16.2042 14.7673 15.9567C14.7837 15.716 14.8132 15.5988 14.8452 15.5216C14.972 15.2154 15.2154 14.972 15.5216 14.8452Z"
+                            fill="#FAFAFA" />
+                    </svg>
+                </div>
             </nav>
+            <ul class="xs:hidden xs:flex xs:flex-col xs:gap-8 xs:items-start xs:pb-[30px] lg:hidden menu__opened">
+                <li>
+                    <a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Business areas</a>
+                </li>
+                <li>
+                    <a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Featured images</a>
+                </li>
+                <li>
+                    <a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Gear cage</a>
+                </li>
+                <li>
+                    <a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Contact</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="text-black py-[10px] px-5 rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover">
+                        Get template
+                    </a>
+                </li>
         </div>
         <div
-            class="bg-header-bg w-full flex flex-col justify-end items-center text-center h-[716px] bg-cover gap-5 pb-[50px]">
+            class="xs:h-[600px] lg:h-[716px] bg-header-bg w-full flex flex-col justify-end items-center text-center bg-cover gap-5 pb-[50px] px-4">
             <div>
                 <div class="flex flex-col items-center">
                     <p class="text-primary-750 uppercase text-[14px] tracking-[2px]">Photographer & Filmmaker</p>
@@ -114,83 +178,76 @@
         </div>
     </header>
     <main>
-        <section class="pt-[120px] pb-[100px]">
+        <section class="xs:pt-[60px] xs:pb-[50px] lg:pt-[120px] pb-[100px]">
             <div class="contain">
                 <div class="flex flex-col items-center gap-[15px] pb-[40px]">
                     <h2 class="text-[40px]">What we do.</h2>
                     <p class="text-primary-750 text-[23px]">The areas that we're specialized in.</p>
                 </div>
-                <div class="flex flex-col items-center gap-4">
-                    <div class="flex flex-row gap-4">
-                        <div class="bg-what-we-do-item1 max-w-[576px] w-full h-[600px] pl-[30px] flex flex-col gap-[20px] justify-end items-start text-[14px] pb-[30px]
-                    ">
-                            <h4 class="tracking-[2px] uppercase">Product Photography</h4>
-                            <p class="max-w-[500px] w-full text-primary-750">Cras commodo consequat orci, in convallis
-                                risus
-                                egestas non. Nulla efficitur auctor
-                                hendrerit. Etiam ut orci varius, faucibus libero ac, cursus quam.</p>
-                            <a href="#"
-                                class="text-black p-[10px] rounded-[14px] block bg-white text-[16px]  transition ease-in-out duration-400 hover:bg-btn-hover flex flex-row items-center gap-[6px]">
-                                <div class="bg-black w-[32px] h-[32px] rounded-[50px]"></div>
-                                Read more
-                            </a>
-                        </div>
-                        <div class="bg-what-we-do-item2 max-w-[576px] w-full h-[600px] pl-[30px] flex flex-col gap-[20px] justify-end items-start text-[14px] pb-[30px]
-                    ">
-                            <h4 class="tracking-[2px] uppercase">Architecture Photography</h4>
-                            <p class="max-w-[500px] w-full text-primary-750">Aenean porta neque eget consequat
-                                fringilla.
-                                Vestibulum ultrices, orci nec egestas pharetra, ligula est semper enim, nec auctor
-                                sapien
-                                leo nec purus. Fusce tincidunt aliquet sapien, sit amet rhoncus leo imperdiet nec.</p>
-                            <a href="#"
-                                class="text-black p-[10px] rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover flex flex-row items-center gap-[6px]">
-                                <div class="bg-black w-[32px] h-[32px] rounded-[50px]"></div>
-                                Read more
-                            </a>
-                        </div>
+                <div class="xs:grid xs:grid-cols-1 xs:place-items-center xs:gap-8 lg:grid-cols-2 lg:gap-4">
+                    <div
+                        class="xs:h-[400px] lg:h-[600px] bg-what-we-do-item1 bg-center bg-no-repeat bg-cover w-full h-[600px] px-[30px] flex flex-col gap-[20px] justify-end items-start text-[14px] pb-[30px]">
+                        <h4 class="tracking-[2px] uppercase">Product Photography</h4>
+                        <p class="max-w-[500px] w-full text-primary-750">Cras commodo consequat orci, in convallis
+                            risus
+                            egestas non. Nulla efficitur auctor
+                            hendrerit. Etiam ut orci varius, faucibus libero ac, cursus quam.</p>
+                        <a href="#"
+                            class="text-black p-[10px] rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover">
+                            Read more
+                        </a>
                     </div>
-                    <div class="flex flex-row gap-4">
-                        <div class="bg-what-we-do-item3 max-w-[576px] w-full h-[600px] pl-[30px] flex flex-col gap-[20px] justify-end items-start text-[14px] pb-[30px]
-                    ">
-                            <h4 class="tracking-[2px] uppercase">Drone Photography</h4>
-                            <p class="max-w-[500px] w-full text-primary-750">Mauris euismod elit et nisi ultrices, ut
-                                faucibus orci tincidunt. Duis tristique sed lorem a vestibulum. Cras commodo consequat
-                                orci,
-                                in convallis risus egestas non. Nulla efficitur auctor hendrerit. Etiam ut orci varius,
-                                faucibus libero ac, cursus quam.</p>
-                            <a href="#"
-                                class="text-black p-[10px] rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover flex flex-row items-center gap-[6px]">
-                                <div class="bg-black w-[32px] h-[32px] rounded-[50px]"></div>
-                                Read more
-                            </a>
-                        </div>
-                        <div class="bg-what-we-do-item4 max-w-[576px] w-full h-[600px] pl-[30px] flex flex-col gap-[20px] justify-end items-start text-[14px] pb-[30px]
-                    ">
-                            <h4 class="tracking-[2px] uppercase">Wildlife Photography</h4>
-                            <p class="max-w-[500px] w-full text-primary-750">Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit. Nullam scelerisque aliquam odio et faucibus. Nulla rhoncus feugiat eros
-                                quis consectetur. Morbi neque ex, condimentum dapibus congue et, vulputate ut ligula.
-                                Vestibulum sit amet urna turpis.</p>
-                            <a href="#"
-                                class="text-black p-[10px] rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover flex flex-row items-center gap-[6px]">
-                                <div class="bg-black w-[32px] h-[32px] rounded-[50px]"></div>
-                                Read more
-                            </a>
-                        </div>
+                    <div
+                        class="xs:h-[400px] lg:h-[600px] bg-what-we-do-item2 bg-no-repeat bg-center bg-cover w-full h-[600px] px-[30px] flex flex-col gap-[20px] justify-end items-start text-[14px] pb-[30px]">
+                        <h4 class="tracking-[2px] uppercase">Architecture Photography</h4>
+                        <p class="max-w-[500px] w-full text-primary-750">Aenean porta neque eget consequat
+                            fringilla.
+                            Vestibulum ultrices, orci nec egestas pharetra, ligula est semper enim, nec auctor
+                            sapien
+                            leo nec purus. Fusce tincidunt aliquet sapien, sit amet rhoncus leo imperdiet nec.</p>
+                        <a href="#"
+                            class="text-black p-[10px] rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover">
+                            Read more
+                        </a>
+                    </div>
+                    <div
+                        class="xs:h-[400px] lg:h-[600px] bg-what-we-do-item3 bg-center bg-no-repeat bg-cover w-full h-[600px] px-[30px] flex flex-col gap-[20px] justify-end items-start text-[14px] pb-[30px]">
+                        <h4 class="tracking-[2px] uppercase">Drone Photography</h4>
+                        <p class="max-w-[500px] w-full text-primary-750">Mauris euismod elit et nisi ultrices, ut
+                            faucibus orci tincidunt. Duis tristique sed lorem a vestibulum. Cras commodo consequat
+                            orci,
+                            in convallis risus egestas non. Nulla efficitur auctor hendrerit. Etiam ut orci varius,
+                            faucibus libero ac, cursus quam.</p>
+                        <a href="#"
+                            class="text-black p-[10px] rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover">
+                            Read more
+                        </a>
+                    </div>
+                    <div
+                        class="xs:h-[400px] lg:h-[600px] bg-what-we-do-item4 bg-center bg-no-repeat bg-cover w-full  px-[30px] flex flex-col gap-[20px] justify-end items-start text-[14px] pb-[30px]">
+                        <h4 class="tracking-[2px] uppercase">Wildlife Photography</h4>
+                        <p class="max-w-[500px] w-full text-primary-750">Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Nullam scelerisque aliquam odio et faucibus. Nulla rhoncus feugiat eros
+                            quis consectetur. Morbi neque ex, condimentum dapibus congue et, vulputate ut ligula.
+                            Vestibulum sit amet urna turpis.</p>
+                        <a href="#"
+                            class="text-black p-[10px] rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover">
+                            Read more
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
         <section>
-            <div class="bg-mountains bg-center w-full bg-cover max-h-[600px] h-full flex flex-col items-end pt-[200px]">
-                <div class="flex flex-col text-[14px] max-w-[400px] w-full">
+            <div
+                class="xs:h-[400px] xs:pt-[100px] lg:h-[600px] lg:pt-[200px] bg-mountains bg-center w-full bg-cover flex flex-col items-end">
+                <div class="flex flex-col text-[14px] max-w-[400px] w-full px-4">
                     <h4 class="tracking-[2px] uppercase">Sunset at Mount Fuji</h4>
                     <p class="pr-[60px] text-primary-750">Duis tristique sed lorem a vestibulum. Cras commodo consequat
                         orci, in
                         convallis risus egestas non.</p>
                 </div>
-                <div class="flex flex-row self-end text-[12px] gap-4 pr-[40px] pt-[260px]">
+                <div class="xs:pt-[160px] lg:pt-[260px] flex flex-row self-end text-[12px] gap-4 pr-[40px]">
                     <p class="flex flex-row gap-[6px]">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -228,7 +285,7 @@
         </section>
         <section>
             <div class="flex flex-row items-center justify-between gap-[60px]">
-                <div class="flex flex-col px-[100px] gap-4 items-start">
+                <div class="xs:px-4 lg:px-[100px] flex flex-col gap-4 items-start py-[50px]">
                     <div class="flex flex-col gap-[6px] text-[14px]">
                         <span class="uppercase text-primary-750 tracking-[2px]">The Gear cage</span>
                         <h3 class="text-[28px]">The tools that we use.</h3>
@@ -240,13 +297,12 @@
                         we actually use everyday to <br> capture the amazing things around us.
                     </p>
                     <a href="#"
-                        class="text-black p-[10px] rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover flex flex-row items-center gap-[6px]">
-                        <div class="bg-black w-[32px] h-[32px] rounded-[50px]"></div>
+                        class="text-black p-[10px] rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover">
                         Check it out
                     </a>
                 </div>
                 <div
-                    class="bg-mac_and_objectives bg-cover max-w-[720px] w-full h-[540px] flex flex-row justify-end items-end">
+                    class="xs:hidden lg:flex bg-mac_and_objectives bg-cover max-w-[720px] w-full h-[540px] flex-row justify-end items-end">
                     <div class="flex flex-row text-[12px] gap-4 pr-[40px] pb-[40px]">
                         <p class="flex flex-row gap-[6px]">
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -289,7 +345,8 @@
             </div>
         </section>
         <section>
-            <div class="bg-leaf bg-center w-full bg-cover max-h-[600px] h-full flex flex-col items-end pt-[280px]">
+            <div
+                class="xs:h-[400px] xs:pt-[100px] lg:h-[600px] lg:pt-[200px] bg-leaf bg-center w-full bg-cover h-[600px] flex flex-col items-end">
                 <div class="flex flex-col text-[14px] max-w-[340px] w-full">
                     <h4 class="tracking-[2px] uppercase">Monstera Leafs</h4>
                     <p class="pr-[60px] text-primary-750">
@@ -297,7 +354,7 @@
                         tincidunt.
                     </p>
                 </div>
-                <div class="flex flex-row self-end text-[12px] gap-4 pr-[40px] pt-[200px]">
+                <div class="xs:pt-[160px] lg:pt-[260px] flex flex-row self-end text-[12px] gap-4 pr-[40px]">
                     <p class="flex flex-row gap-[6px]">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -333,25 +390,26 @@
                 </div>
             </div>
         </section>
-        <section class="pt-[120px] pb-[140px]">
+        <section class="xs:pt-[60px] xs:pb-[80px] lg:pt-[120px] pb-[140px]">
             <div class="contain">
                 <div class="flex flex-col gap-[82px] items-center">
                     <div class="flex flex-col gap-4 items-center">
                         <h3 class="text-[40px]">Past clients</h3>
                         <p class="text-primary-750 text-[24px]">Trusted by your favourite companies</p>
                     </div>
-                    <ul class="flex flex-row justify-between items-center gap-[100px]">
-                        <li><a href="#"><img src="img/past_clients1.png" alt="#"></a></li>
-                        <li><a href="#"><img src="img/past_clients2.png" alt="#"></a></li>
-                        <li><a href="#"><img src="img/past_clients3.png" alt="#"></a></li>
-                        <li><a href="#"><img src="img/past_clients4.png" alt="#"></a></li>
-                        <li><a href="#"><img src="img/past_clients5.png" alt="#"></a></li>
+                    <ul class="xs:flex xs:flex-col xs:gap-[60px] lg:flex-row justify-between items-center gap-[100px]">
+                        <li><a href="#"><img class="object-cover w-full" src="img/past_clients1.webp" alt="#"></a></li>
+                        <li><a href="#"><img class="object-cover w-full" src="img/past_clients2.webp" alt="#"></a></li>
+                        <li><a href="#"><img class="object-cover w-full" src="img/past_clients3.webp" alt="#"></a></li>
+                        <li><a href="#"><img class="object-cover w-full" src="img/past_clients4.webp" alt="#"></a></li>
+                        <li><a href="#"><img class="object-cover w-full" src="img/past_clients5.webp" alt="#"></a></li>
                     </ul>
                 </div>
             </div>
         </section>
         <section>
-            <div class="bg-skyfall bg-center w-full bg-cover h-[600px] flex flex-col items-end pt-[250px]">
+            <div
+                class="xs:h-[400px] xs:pt-[100px] lg:h-[600px] lg:pt-[250px] bg-skyfall bg-center w-full bg-cover h-[600px] flex flex-col items-end">
                 <div class="flex flex-col text-[14px] max-w-[300px] w-full">
                     <h4 class="tracking-[2px] uppercase">Star fall in the Himalayas</h4>
                     <p class="pr-[60px] text-primary-750">
@@ -359,7 +417,7 @@
                         vulputate ut ligula.
                     </p>
                 </div>
-                <div class="flex flex-row self-end text-[12px] gap-4 pr-[40px] pt-[200px]">
+                <div class="xs:pt-[160px] lg:pt-[200px] flex flex-row self-end text-[12px] gap-4 pr-[40px]">
                     <p class="flex flex-row gap-[6px]">
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -395,23 +453,23 @@
                 </div>
             </div>
         </section>
-        <section class="pt-[120px] pb-[200px]">
+        <section class="xs:pt-[60px] xs:pb-[100px] lg:pt-[120px] pb-[200px]">
             <div class="contain">
                 <div class="flex flex-col items-center gap-4 text-center">
-                    <h3 class="text-[42px] max-w-[600px] w-full">Need help with photography or videography?</h3>
+                    <h3 class="xs:text-[34px] sm:text-[42px] max-w-[600px] w-full">Need help with photography or
+                        videography?</h3>
                     <p class="text-primary-750 text-[24px]">We're here for you!</p>
                     <a href="#"
-                        class="text-black p-[10px] rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover flex flex-row items-center gap-[6px]">
-                        <div class="bg-black w-[32px] h-[32px] rounded-[50px]"></div>
+                        class="text-black p-[10px] rounded-[14px] block bg-white text-[16px] transition ease-in-out duration-400 hover:bg-btn-hover">
                         Get in touch
                     </a>
                 </div>
             </div>
         </section>
     </main>
-    <footer>
+    <footer class="xs:pb-[50px] lg:pb-[100px]">
         <div class="contain">
-            <div class="flex flex-row justify-between pb-[100px]">
+            <div class="xs:flex xs:flex-col xs:pb-[50px] lg:flex-row justify-between gap-8 pb-[100px]">
                 <div class="flex flex-col gap-5">
                     <a href="#">
                         <svg width="128" height="31" viewBox="0 0 128 31" fill="none"
@@ -424,19 +482,31 @@
                     <p class="text-[13px] text-primary-750">Photographers & videographers capturing the world around us.
                     </p>
                 </div>
-                <div class="flex flex-row gap-[80px] items-start">
+                <div class="xs:flex xs:flex-col xs:gap-[40px] sm:flex-row sm:gap-[80px] items-start">
                     <ul class="flex flex-col gap-[10px] text-[14px]">
                         <li>
                             <h5 class="uppercase text-primary-750 tracking-[2px]">Business areas</h5>
                         </li>
-                        <li><a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Product
-                                Photography</a></li>
-                        <li><a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Architecture
-                                Photography</a></li>
-                        <li><a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Drone
-                                Photography</a></li>
-                        <li><a href="#" class="transition duration-300 ease-in hover:text-btn-hover">Wildlife
-                                Photography</a></li>
+                        <li>
+                            <a href="#" class="transition duration-300 ease-in hover:text-btn-hover">
+                                Product Photography
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="transition duration-300 ease-in hover:text-btn-hover">
+                                Architecture Photography
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="transition duration-300 ease-in hover:text-btn-hover">
+                                Drone Photography
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="transition duration-300 ease-in hover:text-btn-hover">
+                                Wildlife Photography
+                            </a>
+                        </li>
                     </ul>
                     <ul class="flex flex-col gap-[10px] text-[14px]">
                         <li>
@@ -454,20 +524,20 @@
                     </ul>
                 </div>
             </div>
-            <hr class="h-[2px] bg-white">
-            <div class="py-[36px] flex flex-row items-center justify-between">
+            <div
+                class="xs:flex xs:flex-col xs:text-center lg:flex-row lg:text-start items-center justify-between py-[36px] gap-6 border-y border-y-2">
                 <div class="flex flex-col gap-5">
                     <h5 class="uppercase tracking-[2px] text-[14px]">Subscribe to our newsletter</h5>
                     <p class="text-primary-750 text-[13px]">Read about all the things we do.</p>
                 </div>
-                <form action="#" method="get" class="relative">
-                    <input type="email"
-                        class="outline-0 border-0 py-[11px] w-[450px] px-5 rounded-[12px] focus:outline-0 shrink-0">
-                    <input type="submit" value="Submit" class="bg-black text-white absolute right-[20px] top-[10px] px-5 rounded-[12px] font-medium">
+                <form action="#" method="get" class="relative max-w-[400px] w-full">
+                    <input type="email" placeholder="Email"
+                        class="outline-0 border-0 py-[11px] max-w-[500px] w-full px-5 rounded-[12px] shrink-0">
+                    <input type="submit" value="Submit"
+                        class="bg-black text-white absolute right-[20px] top-[10px] px-5 rounded-[12px] font-medium cursor-pointer">
                 </form>
             </div>
-            <hr class="h-[2px] bg-white">
-            <div class="flex flex-row justify-between pt-[56px] items-center pb-[100px]">
+            <div class="xs:flex xs:flex-col-reverse sm:flex-row justify-between pt-[56px] gap-5">
                 <p class="text-[14px] text-primary-750">© Aperture Photography, Inc. All rights reserved.</p>
                 <div class="flex flex-row items-center gap-5">
                     <a href="#">
@@ -496,8 +566,7 @@
         </div>
     </footer>
 
-
-
+    <script src="main.js"></script>
 </body>
 
 
